@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/groupdemo_report?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong
+    username: root
+    password: sa123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true            # \u8F93\u51FA SQL
+    properties:
+      hibernate:
+        format_sql: true      # \u683C\u5F0F\u5316 SQL
+server:
+  port: 8181
