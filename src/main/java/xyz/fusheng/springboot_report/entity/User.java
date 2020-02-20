@@ -15,6 +15,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -22,8 +23,9 @@ import java.sql.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;             // 用户id
-    private String name;        // 真实姓名
+    @Column(name = "user_id")
+    private Integer id;         // 用户id
+    private String name;            // 真实姓名
     private String username;        // 用户名
     private String password;        // 用户密码
     private Integer age;            // 年龄
@@ -33,6 +35,16 @@ public class User {
     private String email;           // 邮箱
     private Date createTime;        // 创建时间
     private Date updateTime;        // 修改时间
-    private String role;            // 角色
+    // private String role;            // 角色
     private Boolean active;         //  1 激活状态 or 0 非激活
+
+    // @ManyToMany(cascade = {
+    //         CascadeType.PERSIST,
+    //         CascadeType.MERGE
+    // })
+    // @JoinTable(name = "rp_user_role",
+    //     joinColumns = @JoinColumn(name = "user_id"),
+    //     inverseJoinColumns = @JoinColumn(name = "role_id")
+    // )
+    // public Set<Role> roles;
 }

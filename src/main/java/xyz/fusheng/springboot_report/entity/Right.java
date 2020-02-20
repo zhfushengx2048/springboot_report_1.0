@@ -21,6 +21,7 @@ import java.util.List;
 public class Right {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "right_id")
     private Integer id;             // 权限id
     private String name;       // 权限名
     @Column(columnDefinition="INT default 0")

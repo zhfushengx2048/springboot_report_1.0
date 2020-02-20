@@ -15,6 +15,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -22,12 +23,23 @@ import java.util.List;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
     private Integer id;            // 角色id
     private String name;           // 角色名
     private String description;    // 角色描述
-    private String rid;            // 权限id
 
     @Transient
     private List<Right> children;
+
+
+    // @ManyToMany(cascade = {
+    //         CascadeType.PERSIST,
+    //         CascadeType.MERGE
+    // })
+    // @JoinTable(name = "rp_role_right",
+    //     joinColumns = @JoinColumn(name = "role_id"),
+    //     inverseJoinColumns = @JoinColumn(name = "right_id")
+    // )
+    // public Set<Right> rights;
 
 }

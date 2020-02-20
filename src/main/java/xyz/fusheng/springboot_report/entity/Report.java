@@ -31,7 +31,5 @@ public class Report {
     private String method;      // 解决的方法
     private String harvest;     // 今日心得
     private String plan;        // 明日计划
-    private String group;       // 组名
-
 }
 

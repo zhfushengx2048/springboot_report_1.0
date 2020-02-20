@@ -39,7 +39,7 @@ public class ReportHandler {
 
     // 添加日报操作 接口:[http://localhost:8181/report/reports/add]
     @PostMapping("/reports/add")
-    public String save(@RequestBody Report report) {
+    public String addReport(@RequestBody Report report) {
         Report result = reportRepository.save(report);
         if (result != null) {
             return "success";

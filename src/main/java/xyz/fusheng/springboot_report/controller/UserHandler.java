@@ -15,12 +15,14 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+// import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import xyz.fusheng.springboot_report.entity.User;
 import xyz.fusheng.springboot_report.repository.UserRepository;
 import xyz.fusheng.springboot_report.service.UserService;
 
 import javax.xml.transform.Result;
+import java.security.MessageDigest;
 import java.util.List;
 
 @RestController
@@ -52,6 +54,10 @@ public class UserHandler {
     // 添加用户列表操作 接口:[http://localhost:8181/user/users/add]
     @PostMapping("users/add")
     public String addUser(@RequestBody User user){
+        // String password = user.getPassword();
+        // BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        // String newPassword = encoder.encode(password);
+        // user.setPassword(newPassword);
         User result = userRepository.save(user);
         if (result != null) {
             return "success";
