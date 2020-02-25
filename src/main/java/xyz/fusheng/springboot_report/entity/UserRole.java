@@ -14,11 +14,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-// @Data
-// @Entity
-// @Table(name = "rp_user_role")
-// public class UserRole {
-//
-//     private int user_id;
-//     private String role_id;
-// }
+@Data
+@Table(name = "rp_user_role")
+public class UserRole {
+    @Column(name = "user_id")
+    private Integer userId;
+    @Column(name = "role_id")
+    private Integer roleId;
+}

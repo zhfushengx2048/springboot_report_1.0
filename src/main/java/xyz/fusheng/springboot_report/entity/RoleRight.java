@@ -10,6 +10,17 @@
  */
 package xyz.fusheng.springboot_report.entity;
 
-public class RoleRight {
 
+import lombok.Data;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+@Data
+@Table(name = "rp_role_right")
+public class RoleRight {
+    @Column(name = "role_id")
+    private Integer roleId;
+    @Column(name = "right_id")
+    private Integer rightId;
 }

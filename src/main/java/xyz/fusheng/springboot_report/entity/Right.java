@@ -14,6 +14,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -32,5 +33,11 @@ public class Right {
 
     @Transient
     private List<Right> children;
+
+    @ManyToMany(cascade={CascadeType.PERSIST,
+            CascadeType.MERGE},
+            mappedBy = "rights",
+            fetch = FetchType.LAZY)
+    private Set<Role> roleSet;
 
 }

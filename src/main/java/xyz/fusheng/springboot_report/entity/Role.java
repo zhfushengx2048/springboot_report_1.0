@@ -28,18 +28,24 @@ public class Role {
     private String name;           // 角色名
     private String description;    // 角色描述
 
-    @Transient
-    private List<Right> children;
+    // @Transient
+    // private List<Right> children;
 
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "rp_role_right",
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "right_id")
+    )
+    public Set<Right> rights;
 
-    // @ManyToMany(cascade = {
-    //         CascadeType.PERSIST,
-    //         CascadeType.MERGE
-    // })
-    // @JoinTable(name = "rp_role_right",
-    //     joinColumns = @JoinColumn(name = "role_id"),
-    //     inverseJoinColumns = @JoinColumn(name = "right_id")
-    // )
-    // public Set<Right> rights;
+    @ManyToMany(cascade={
+            CascadeType.PERSIST,
+            CascadeType.MERGE},
+            mappedBy = "roles",
+            fetch = FetchType.LAZY)
+    private Set<User> userSet;
 
 }

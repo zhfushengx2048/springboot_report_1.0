@@ -15,6 +15,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import xyz.fusheng.springboot_report.entity.Right;
 import xyz.fusheng.springboot_report.entity.Role;
+import xyz.fusheng.springboot_report.repository.RightRepository;
 import xyz.fusheng.springboot_report.repository.RoleRepository;
 import xyz.fusheng.springboot_report.service.RightService;
 import xyz.fusheng.springboot_report.service.RoleService;
@@ -30,15 +31,18 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private RightService rightService;
 
+    @Autowired
+    private RightRepository rightRepository;
+
 
 
     @Override
     public List<Role> buildRoleList() {
         List<Role> roles = roleRepository.findAll();
-        List<Right> rights = rightService.buildRightList();
-        for (Role role : roles) {
-            role.setChildren(rights);
-        }
+        // List<Right> rights = rightService.buildRightList();
+        // for (Role role : roles) {
+        //     role.setChildren(rights);
+        // }
         return roles;
     }
 }

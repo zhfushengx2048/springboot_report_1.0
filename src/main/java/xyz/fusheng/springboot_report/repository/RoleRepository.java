@@ -11,9 +11,17 @@
 package xyz.fusheng.springboot_report.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import xyz.fusheng.springboot_report.entity.Right;
 import xyz.fusheng.springboot_report.entity.Role;
 
+import java.util.List;
+
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Integer> {
+public interface RoleRepository extends JpaRepository<Role, Integer>, JpaSpecificationExecutor<Role> {
+
+
+
 }

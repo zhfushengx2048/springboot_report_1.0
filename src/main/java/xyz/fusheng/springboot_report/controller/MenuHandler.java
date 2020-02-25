@@ -25,9 +25,6 @@ import java.util.List;
 public class MenuHandler {
 
     @Autowired
-    private MenuRepository menuRepository;
-
-    @Autowired
     private MenuService menuService;
 
     @GetMapping("/menus")

@@ -11,5 +11,12 @@
 package xyz.fusheng.springboot_report.service;
 
 
+import xyz.fusheng.springboot_report.entity.User;
+
+import java.util.List;
+
 public interface UserService {
+
+    User findByUsername(String username);
+
 }

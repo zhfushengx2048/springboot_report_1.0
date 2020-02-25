@@ -19,6 +19,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 import xyz.fusheng.springboot_report.entity.User;
 import xyz.fusheng.springboot_report.repository.UserRepository;
+import xyz.fusheng.springboot_report.service.Impl.UserServiceImpl;
 import xyz.fusheng.springboot_report.service.UserService;
 
 import javax.xml.transform.Result;
@@ -32,6 +33,18 @@ public class UserHandler {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/findOne/{username}")
+    public User findOne(@PathVariable("username") String username){
+        return userService.findByUsername("test");
+    }
+
+    @GetMapping("/users")
+    public List<User> findAll(){
+        return userRepository.findAll();
+    }
     // 初始化用户列表操作 接口:[http://localhost:8181/user/users/{page}/{size}]
     @GetMapping("/users/{page}/{size}")
     public Page<User> userList(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {

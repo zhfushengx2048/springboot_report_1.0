@@ -21,7 +21,6 @@ import xyz.fusheng.springboot_report.repository.UserRepository;
 @RestController
 @RequestMapping("/user")
 public class LoginHandler{
-
     @Autowired
     private UserRepository userRepository;
 
@@ -36,5 +35,4 @@ public class LoginHandler{
         }
         return false;
     }
-
 }

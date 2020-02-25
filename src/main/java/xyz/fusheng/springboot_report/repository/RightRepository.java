@@ -11,6 +11,7 @@
 package xyz.fusheng.springboot_report.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import xyz.fusheng.springboot_report.entity.Right;
 
@@ -20,6 +21,5 @@ import java.util.List;
 public interface RightRepository extends JpaRepository<Right, Integer> {
     @Override
     List<Right> findAll();
-
     List<Right> findAllByPid(int pid);
 }
