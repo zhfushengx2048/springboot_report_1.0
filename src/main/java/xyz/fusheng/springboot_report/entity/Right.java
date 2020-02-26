@@ -31,13 +31,13 @@ public class Right {
     private int level;         // 权限等级
     private String path;
 
-    @Transient
-    private List<Right> children;
-
-    @ManyToMany(cascade={CascadeType.PERSIST,
-            CascadeType.MERGE},
-            mappedBy = "rights",
-            fetch = FetchType.LAZY)
-    private Set<Role> roleSet;
+    // @Transient
+    // private List<Right> children;
+    //
+    // @ManyToMany(cascade={CascadeType.PERSIST,
+    //         CascadeType.MERGE},
+    //         mappedBy = "rights",
+    //         fetch = FetchType.LAZY)
+    // private Set<Role> roleSet;
 
 }

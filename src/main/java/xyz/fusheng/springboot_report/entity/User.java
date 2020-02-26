@@ -38,13 +38,13 @@ public class User {
     private Date updateTime;        // 修改时间
     private Boolean active;         //  1 激活状态 or 0 非激活
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "rp_user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    public Set<Role> roles;
+    // @ManyToMany(cascade = {
+    //         CascadeType.PERSIST,
+    //         CascadeType.MERGE
+    // })
+    // @JoinTable(name = "rp_user_role",
+    //         joinColumns = @JoinColumn(name = "user_id"),
+    //         inverseJoinColumns = @JoinColumn(name = "role_id")
+    // )
+    // public Set<Role> roles;
 }
