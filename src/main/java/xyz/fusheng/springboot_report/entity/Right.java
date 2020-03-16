@@ -31,8 +31,9 @@ public class Right {
     private int level;         // 权限等级
     private String path;
 
-    // @Transient
-    // private List<Right> children;
+
+    @Transient
+    private List<Right> children;
     //
     // @ManyToMany(cascade={CascadeType.PERSIST,
     //         CascadeType.MERGE},

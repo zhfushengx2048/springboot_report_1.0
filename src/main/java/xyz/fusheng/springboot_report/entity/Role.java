@@ -28,8 +28,8 @@ public class Role {
     private String name;           // 角色名
     private String description;    // 角色描述
 
-    // @Transient
-    // private List<Right> children;
+    @Transient
+    private List<Right> children;
     //
     // @ManyToMany(cascade = {
     //         CascadeType.PERSIST,

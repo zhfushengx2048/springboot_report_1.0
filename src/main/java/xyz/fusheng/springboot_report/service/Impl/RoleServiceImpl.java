@@ -39,10 +39,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public List<Role> buildRoleList() {
         List<Role> roles = roleRepository.findAll();
-        // List<Right> rights = rightService.buildRightList();
-        // for (Role role : roles) {
-        //     role.setChildren(rights);
-        // }
+        List<Right> rights = rightService.buildRightList();
+        for (Role role : roles) {
+            role.setChildren(rights);
+        }
         return roles;
     }
 }
